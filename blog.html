@@ -20,10 +20,6 @@
         .shadow-t {
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        .mt-20vh {
-            margin-top: 20vh;
-        }
     </style>
 </head>
 
@@ -41,29 +37,54 @@
                 BLOG!
             </a>
             <div class="text-gray-700 text-base font-light font-bold mt-2 md:mt-0 md:ml-auto">
-                <a href="me.html" class="border-2 border-gray-700 rounded-full w-14 h-10 flex items-center justify-center">ME</a>
+                <a href="me.html"
+                    class="border-2 border-gray-700 rounded-full w-14 h-10 flex items-center justify-center">ME</a>
             </div>
         </div>
     </nav>
 
-    <main></main>
+    <main class="mt-10">
+        <section class="text-center">
+            <div class="text-gray-700 text-lg px-6 md:text-xl">
+                <p class="mb-3">Reflections & thoughts from <span class="border-b-2 border-dashed border-gray-700">my
+                        life</span>...mixed in with some <span class="border-b-2 border-dashed border-gray-700">study &
+                        dev notes</span>.</p>
+                <p class="mb-3">If anything here sparks ur inspiration, that is <span class="font-bold">AWESOME
+                    </span>:）</p>
+            </div>
+        </section>
+        <section id="sort-section" class="text-center mt-8 mb-5">
+            <div class="text-gray-700 text-base px-6 md:text-lg">
+                <button id="sort-all" class="sort-button px-4 py-2 mx-2">All</button> |
+                <button id="sort-life" class="sort-button px-4 py-2 mx-2">Life Stories</button> |
+                <button id="sort-dev" class="sort-button px-4 py-2 mx-2">Dev Notes</button>
+            </div>
+        </section>
+        <section id="posts-container" class="container mx-auto p-4 mb-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- JavaScript will dynamically add the posts here -->
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-white py-6 shadow-t text-center mt-auto">
         <div class="text-gray-700 text-lg font-medium">Thanks, a lot.</div>
         <div class="text-gray-700 text-sm mt-2">©️ lu7ue 2024. All rights reserved.</div>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-            menu.classList.toggle('flex-col');
-            menu.classList.toggle('items-end');
-        });
-    </script>
+    <script src="js/blog.js" defer></script>
 </body>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        menu.classList.toggle('flex-col');
+        menu.classList.toggle('items-end');
+    });
+</script>
 
 </html>

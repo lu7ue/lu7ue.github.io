@@ -2,14 +2,14 @@
     "posts":[
         {
             "title": "Sample Titile",
-            "tag": "notes",
-            "date": "02 July 2024",
-            "dateISO": "2024-07-02",
+            "tag": "life",
+            "date": "03 July 2025",
+            "dateISO": "2025-07-03",
             "description": "This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article.",
             "content": [
                 {
                     "type": "image",
-                    "src": "./images/2024/sample-img-2024.jpg",
+                    "src": "./images/2025/sample-img-2025.jpg",
                     "alt": "a sample picture"
                 },
                 {
@@ -20,14 +20,14 @@
         },
         {
             "title": "Sample Titile",
-            "tag": "notes",
-            "date": "01 December 2024",
-            "dateISO": "2024-12-01",
+            "tag": "life",
+            "date": "08 June 2025",
+            "dateISO": "2025-06-08",
             "description": "This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article.",
             "content": [
                 {
                     "type": "image",
-                    "src": "./images/2024/sample-img-2024.jpg",
+                    "src": "./images/2025/sample-img-2025.jpg",
                     "alt": "a sample picture"
                 },
                 {
@@ -38,14 +38,14 @@
         },
         {
             "title": "Sample Titile",
-            "tag": "notes",
-            "date": "23 July 2024",
-            "dateISO": "2024-07-23",
+            "tag": "life",
+            "date": "04 August 2025",
+            "dateISO": "2025-08-04",
             "description": "This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article.",
             "content": [
                 {
                     "type": "image",
-                    "src": "./images/2024/sample-img-2024.jpg",
+                    "src": "./images/2025/sample-img-2025.jpg",
                     "alt": "a sample picture"
                 },
                 {
@@ -56,14 +56,14 @@
         },
         {
             "title": "Sample Titile",
-            "tag": "notes",
-            "date": "09 April 2024",
-            "dateISO": "2024-04-09",
+            "tag": "life",
+            "date": "01 May 2025",
+            "dateISO": "2025-05-01",
             "description": "This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article.",
             "content": [
                 {
                     "type": "image",
-                    "src": "./images/2024/sample-img-2024.jpg",
+                    "src": "./images/2025/sample-img-2025.jpg",
                     "alt": "a sample picture"
                 },
                 {
