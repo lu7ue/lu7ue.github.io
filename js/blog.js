@@ -1,56 +1,49 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // 页面加载时，默认选中 "all" 排序并为其添加下划线
+document.addEventListener("DOMContentLoaded", function () {
     setActiveButton('sort-all');
-    
-    const dataFiles = ['./data/2024.json', './data/2025.json']; // 可扩展的文件列表
+
     const posts = [];
     const postsContainer = document.getElementById('posts-container');
     const gridContainer = postsContainer.querySelector('.grid');
 
-    // 使用fetch加载所有JSON文件
-    Promise.all(dataFiles.map(file => fetch(file).then(response => response.json())))
-        .then(results => {
-            // 将所有结果合并到posts数组中
-            results.forEach(data => {
-                posts.push(...data.posts);
-            });
+    const data2024 = ['./data/2024.json'];
+    const data2025 = ['./data/2025.json'];
 
-            // 默认按照时间排序（日期最近的排在前面）
-            posts.sort((a, b) => new Date(b.dateISO) - new Date(a.dateISO));
+    fetchData(data2025, "2025").then(() => fetchData(data2024, "2024"));
 
-            // 显示所有文章
-            displayPosts(posts);
+    function fetchData(dataFiles, year) {
+        return Promise.all(dataFiles.map(file => fetch(file).then(response => response.json())))
+            .then(results => {
+                results.forEach(data => {
+                    data.posts.forEach(post => {
+                        post.fileYear = year;
+                    });
+                    posts.push(...data.posts);
+                });
 
-            // 绑定排序按钮
-            document.getElementById('sort-all').addEventListener('click', () => {
-                setActiveButton('sort-all');
+                posts.sort((a, b) => new Date(b.dateISO) - new Date(a.dateISO));
                 displayPosts(posts);
+                setupSortButtons();
+            })
+            .catch(error => {
+                console.error('Error loading blog data:', error);
+                document.getElementById('blog-count').textContent = 'Failed to load blog data.';
             });
+    }
 
-            document.getElementById('sort-life').addEventListener('click', () => {
-                setActiveButton('sort-life');
-                displayPosts(posts.filter(post => post.tag === 'life'));
-            });
-
-            document.getElementById('sort-dev').addEventListener('click', () => {
-                setActiveButton('sort-dev');
-                displayPosts(posts.filter(post => post.tag === 'notes'));
-            });
-        })
-        .catch(error => {
-            console.error('Error loading blog data:', error);
-            document.getElementById('blog-count').textContent = 'Failed to load blog data.';
-        });
-
-    // 用于显示文章的函数
     function displayPosts(postsToDisplay) {
-        // 清空现有内容
         gridContainer.innerHTML = '';
 
-        // 动态生成文章内容
         postsToDisplay.forEach(post => {
             const postElement = document.createElement('div');
             postElement.classList.add('bg-white', 'shadow-lg', 'rounded-lg', 'transform', 'transition-transform', 'hover:scale-105', 'p-4', 'text-sm');
+
+            postElement.addEventListener('click', () => {
+                const selectedPost = { id: post.id, fileYear: post.fileYear };
+                localStorage.setItem('selectedPost', JSON.stringify(selectedPost));
+                window.location.href = 'blog-subpage.html?timestamp=' + new Date().getTime();
+            });
+            
+
 
             const imgElement = document.createElement('img');
             imgElement.src = post.content[0].src;
@@ -86,16 +79,30 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 设置活动按钮并移除其他按钮的下划线
+    function setupSortButtons() {
+        document.getElementById('sort-all').addEventListener('click', () => {
+            setActiveButton('sort-all');
+            displayPosts(posts);
+        });
+
+        document.getElementById('sort-life').addEventListener('click', () => {
+            setActiveButton('sort-life');
+            displayPosts(posts.filter(post => post.tag === 'life'));
+        });
+
+        document.getElementById('sort-dev').addEventListener('click', () => {
+            setActiveButton('sort-dev');
+            displayPosts(posts.filter(post => post.tag === 'notes'));
+        });
+    }
+
     function setActiveButton(activeId) {
         const sortButtons = document.querySelectorAll('.sort-button');
-        
-        // 先移除所有按钮的下划线
+
         sortButtons.forEach(button => {
             button.classList.remove('border-b-2', 'border-black', 'pb-1');
         });
 
-        // 为当前选中的按钮添加下划线
         const activeButton = document.getElementById(activeId);
         activeButton.classList.add('border-b-2', 'border-black', 'pb-1');
     }

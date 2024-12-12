@@ -1,6 +1,7 @@
 {
-    "posts":[
+    "posts": [
         {
+            "id": "2025-1",
             "title": "Sample Titile",
             "tag": "life",
             "date": "03 July 2025",
@@ -15,10 +16,33 @@
                 {
                     "type": "text",
                     "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
                 }
             ]
         },
         {
+            "id": "2025-2",
             "title": "Sample Titile",
             "tag": "life",
             "date": "08 June 2025",
@@ -33,10 +57,33 @@
                 {
                     "type": "text",
                     "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
                 }
             ]
         },
         {
+            "id": "2025-3",
             "title": "Sample Titile",
             "tag": "life",
             "date": "04 August 2025",
@@ -51,16 +98,61 @@
                 {
                     "type": "text",
                     "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
                 }
             ]
         },
         {
+            "id": "2025-4",
             "title": "Sample Titile",
             "tag": "life",
             "date": "01 May 2025",
             "dateISO": "2025-05-01",
             "description": "This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article. This is the description of this article.",
             "content": [
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "text",
+                    "content": "This is the content of this article."
+                },
+                {
+                    "type": "image",
+                    "src": "./images/2025/sample-img-2025.jpg",
+                    "alt": "a sample picture"
+                },
                 {
                     "type": "image",
                     "src": "./images/2025/sample-img-2025.jpg",

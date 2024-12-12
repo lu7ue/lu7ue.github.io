@@ -44,26 +44,8 @@
     </nav>
 
     <main class="mt-10">
-        <section class="text-center">
-            <div class="text-gray-700 text-lg px-6 md:text-xl">
-                <p class="mb-3">Reflections & thoughts from <span class="border-b-2 border-dashed border-gray-700">my
-                        life</span>...mixed in with some <span class="border-b-2 border-dashed border-gray-700">study &
-                        dev notes</span>.</p>
-                <p class="mb-3">If anything here sparks ur inspiration, that is <span class="font-bold">AWESOME
-                    </span>:）</p>
-            </div>
-        </section>
-        <section id="sort-section" class="text-center mt-8 mb-5">
-            <div class="text-gray-700 text-base px-6 md:text-lg">
-                <button id="sort-all" class="sort-button px-4 py-2 mx-2">All</button> |
-                <button id="sort-life" class="sort-button px-4 py-2 mx-2">Life Stories</button> |
-                <button id="sort-dev" class="sort-button px-4 py-2 mx-2">Dev Notes</button>
-            </div>
-        </section>
-        <section id="posts-container" class="container mx-auto p-4 mb-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- inject content dynamically by blog.js -->
-            </div>
+        <section class="container mx-auto p-4">
+            <!-- inject content dynamically by blog-subpage.js -->
         </section>
     </main>
 
@@ -72,7 +54,7 @@
         <div class="text-gray-700 text-sm mt-2">©️ lu7ue 2024. All rights reserved.</div>
     </footer>
 
-    <script src="js/blog.js" defer></script>
+    <script src="js/blog-subpage.js"></script>
 </body>
 
 <script>
@@ -85,6 +67,11 @@
         menu.classList.toggle('flex-col');
         menu.classList.toggle('items-end');
     });
+
+    const backBtn = document.getElementById('back-btn');
+        backBtn.addEventListener('click', () => {
+            history.back();
+        });
 </script>
 
 </html>
