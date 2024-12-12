@@ -20,10 +20,6 @@
         .shadow-t {
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        .mt-20vh {
-            margin-top: 20vh;
-        }
     </style>
 </head>
 
@@ -41,12 +37,70 @@
                 BLOG!
             </a>
             <div class="text-gray-700 text-base font-light font-bold mt-2 md:mt-0 md:ml-auto">
-                <a href="me.html" class="border-2 border-gray-700 rounded-full w-14 h-10 flex items-center justify-center">ME</a>
+                <a href="me.html"
+                    class="border-2 border-gray-700 rounded-full w-14 h-10 flex items-center justify-center">ME</a>
             </div>
         </div>
     </nav>
 
-    <main></main>
+    <main class="container mx-auto w-full sm:w-4/5 md:w-2/4 px-4 mt-10 sm:px-8">
+        <div class="text-satrt mb-10">
+            <p class="text-gray-700 text-3xl font-bold mb-4">LUYUE ZHANG</p>
+            <p class="text-gray-600 text-xl">
+                or just call me Lu, like my friends do (because of the pronunciation issue T^T).
+            </p>
+        </div>
+
+        <ul class="space-y-6">
+            <li>
+                <button
+                    class="flex items-center justify-between w-full text-gray-700 text-2xl font-bold hover:text-gray-600 focus:outline-none"
+                    onclick="toggleMenu(1)">
+                    <span>1 | About</span>
+                    <span class="toggle-icon" id="toggle-icon-1">+</span>
+                </button>
+                <div id="menu-content-1" class="hidden mt-2 text-gray-600 pl-4">
+                    This is where I introduce myself, my background, and my inspirations.
+                </div>
+            </li>
+
+            <li>
+                <button
+                    class="flex items-center justify-between w-full text-gray-700 text-2xl font-bold hover:text-gray-600 focus:outline-none"
+                    onclick="toggleMenu(2)">
+                    <span>2 | Projects</span>
+                    <span class="toggle-icon" id="toggle-icon-2">+</span>
+                </button>
+                <div id="menu-content-2" class="hidden mt-2 text-gray-600 pl-4">
+                    A showcase of the projects I've worked on, from web development to design.
+                </div>
+            </li>
+
+            <li>
+                <button
+                    class="flex items-center justify-between w-full text-gray-700 text-2xl font-bold hover:text-gray-600 focus:outline-none"
+                    onclick="toggleMenu(3)">
+                    <span>3 | Resume</span>
+                    <span class="toggle-icon" id="toggle-icon-3">+</span>
+                </button>
+                <div id="menu-content-3" class="hidden mt-2 text-gray-600 pl-4">
+                    My professional experience, skills, and educational background.
+                </div>
+            </li>
+
+            <li>
+                <button
+                    class="flex items-center justify-between w-full text-gray-700 text-2xl font-bold hover:text-gray-600 focus:outline-none"
+                    onclick="toggleMenu(4)">
+                    <span>4 | Contact</span>
+                    <span class="toggle-icon" id="toggle-icon-4">+</span>
+                </button>
+                <div id="menu-content-4" class="hidden mt-2 text-gray-600 pl-4">
+                    Ways to reach me, including email, social media, and more.
+                </div>
+            </li>
+        </ul>
+    </main>
 
     <footer class="bg-white py-6 shadow-t text-center mt-auto">
         <div class="text-gray-700 text-lg font-medium">Thanks, a lot.</div>
@@ -62,6 +116,22 @@
             menu.classList.toggle('flex');
             menu.classList.toggle('flex-col');
             menu.classList.toggle('items-end');
+        });
+
+        function toggleMenu(id) {
+            const content = document.getElementById(`menu-content-${id}`);
+            const icon = document.getElementById(`toggle-icon-${id}`);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = '-';
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            toggleMenu(1);
         });
     </script>
 </body>
